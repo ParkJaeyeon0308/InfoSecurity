@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+* {
+    color: #49ADA7;
+    margin-top: 1%;
+    font-family: 'Poor Story', cursive;
+}
+.table{
+width: 30%;
+border: 1px solid #49ADA7;
+border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #49ADA7;
+}
+#input1{
+    border-radius: 3px;
+    border: 1px solid #49ADA7;
+}
+
+button{
+    background-color: #49ADA7;
+    color: azure;
+    border : none;
+    width: 90px;
+    height: 25px;
+    border-radius: 3px;
+}
+
+button:hover{
+    box-shadow:200px 0 0 0 rgba(0,0,0,0.5) inset;
+}
