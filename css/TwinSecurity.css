@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 * {
     color: #49ADA7;
-    margin-top: 1%;
+    /* margin-top: 1%; */
     font-family: 'Poor Story', cursive;
 }
 .table{
