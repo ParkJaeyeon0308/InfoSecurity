@@ -30,3 +30,27 @@ button{
 button:hover{
     box-shadow:200px 0 0 0 rgba(0,0,0,0.5) inset;
 }
+.inputs{
+    width: 200px;
+    border: 2px solid #49ADA7;
+    border-radius: 5px;
+}
+
+.customBtn{
+    background-color: #49ADA7;
+    color: azure;
+    border : none;
+    width: 90px;
+    height: 25px;
+    border-radius: 3px;
+}
+
+.customBtn:hover{
+    box-shadow:200px 0 0 0 rgba(0,0,0,0.5) inset;
+}
+
+textarea{
+    width: 200px;
+    border: 2px solid #49ADA7;
+    border-radius: 5px;
+}
