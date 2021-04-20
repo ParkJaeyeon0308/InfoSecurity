@@ -1,13 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Jua:400');
 body {
-  font-family: 'Poor Story', cursive;
+  font-family: 'Jua', cursive;
+  font-size: 60px;
+  text-decoration: none;
 }
-
+a{
+  color: rgb(151, 199, 206);
+  text-decoration: none;
+}
 .sidenav {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   background-color: #C8F2ED;
@@ -41,3 +46,47 @@ body {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+.dung{
+  text-decoration: none;
+  position:absolute; 
+  size: 30px;
+  top:30%;
+  left:10%;
+  animation:ani 1s infinite alternate;  
+  text-shadow: 5px 5px 7px#383a3a;
+   }
+
+.dung1{
+  text-decoration: none;
+  position:absolute; top:50%;
+  left:25%;
+  animation:ani 1.5s infinite alternate;  
+  text-shadow: 5px 5px 7px#383a3a;
+}
+
+.dung2{
+  text-decoration: none;
+  position:absolute; top:30%;
+  left :40%;
+  animation:ani 0.8s infinite alternate;  
+  text-shadow: 5px 5px 7px#383a3a;
+}
+.dung3{
+  text-decoration: none;
+  position:absolute; top:50%;
+  left :55%;
+  animation:ani 1s infinite alternate;  
+  text-shadow: 5px 5px 7px#383a3a;
+}
+.dung4{
+  text-decoration: none;
+  position:absolute; top:30%;
+  left :80%;
+  animation:ani 1.2s infinite alternate;  
+  text-shadow: 5px 5px 7px#383a3a;
+}
+@keyframes ani{
+   0%{transform:translate(0,0);}
+   100%{transform:translate(0,50px);}
+}  
