@@ -1,6 +1,7 @@
 <html>
 <title>쌍자치환 암호하기</title>
 <meta charset="utf-8">
+
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -22,22 +23,21 @@
     <!-- <div class="container"> -->
     <div class="nav" style="background-color: #C8F2ED; height: 100px;">
         <!-- &#9776 이건 햄버거바 유니코드 show -->
-        <span style="font-size:30px;cursor:pointer; color: #49ADA7; margin-left: 20px; margin-top: 25px;" onclick="openNav()">&#9776;</span>
+        <span style="font-size:30px;cursor:pointer; color: #49ADA7; margin-left: 20px; margin-top: 25px;"
+            onclick="openNav()">&#9776;</span>
         <!-- </div> -->
     </div>
     <center>
-        <form style="margin-top: 5%;">
+        <form style="margin-top: 1%;">
             가상의 암호키 <br> <input type="text" id="key" size="40" class="inputs"><br><br>
             평문<br> <input type="text" id="str" size="40" class="inputs">&nbsp;<br><br>
-            <input type="button" id="btn_encrypt" value="암호화 시작" onclick="Encrypt();" class="customBtn"/><br><br>
+            <input type="button" id="btn_encrypt" value="암호화 시작" onclick="Encrypt();" class="customBtn" /><br><br>
             <textarea id="txtar_encrypt_tbl" cols="20" rows="6"></textarea><br><br>
             암호화된 문자열<br>
-            <textarea id="txtar_encrypted_str" cols="20" rows="2"></textarea><br>
-            <br /><br />
+            <textarea id="txtar_encrypted_str" cols="20" rows="1"></textarea><br><br>
             복호화된 문자열<br>
-            <textarea id="txtar_decrypted_str" cols="20" rows="2"></textarea>
+            <textarea id="txtar_decrypted_str" cols="20" rows="1"></textarea>
         </form>
     </center>
-</body>
 
 </html>
