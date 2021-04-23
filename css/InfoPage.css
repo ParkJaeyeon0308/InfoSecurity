@@ -1,104 +1,147 @@
 @import url('https://fonts.googleapis.com/css?family=Jua:400');
-body { 
-  font-family: 'Jua', cursive; 
-  font-size: 60px; 
-  text-decoration: none; 
-} 
-a { 
-  color: rgb(151, 199, 206); 
-  text-decoration: none; 
-} 
-a:link { 
-  color: rgb(151, 199, 206); 
-  text-decoration: none; 
-} 
-a:visited { 
-  color: rgb(151, 199, 206); 
-  text-decoration: none; 
-} 
-a:hover { 
-  color: rgb(151, 199, 206); 
-  text-decoration: none; 
-} 
 
-.sidenav { 
-  height: 100%; 
-  width: 0; 
-  position: fixed; 
-  z-index: 2; 
-  top: 0; 
-  left: 0; 
-  background-color: #C8F2ED; 
-  overflow-x: hidden; 
-  transition: 0.5s; 
-  padding-top: 60px; 
-} 
+body {
+  font-family: 'Jua', cursive;
+  font-size: 60px;
+  text-decoration: none;
+}
 
-.sidenav a { 
-  padding: 8px 8px 8px 32px; 
-  text-decoration: none; 
-  font-size: 25px; 
-  color: #49ADA7; 
-  display: block; 
-  transition: 0.3s; 
-} 
+a {
+  color: rgb(151, 199, 206);
+  text-decoration: none;
+}
 
-.sidenav a:hover { 
-  color: #317a76; 
-} 
+a:link {
+  color: rgb(151, 199, 206);
+  text-decoration: none;
+}
 
-.sidenav .closebtn { 
-  position: absolute; 
-  top: 0; 
-  right: 25px; 
-  font-size: 36px; 
-  margin-left: 50px; 
-} 
+a:visited {
+  color: rgb(151, 199, 206);
+  text-decoration: none;
+}
 
-@media screen and (max-height: 450px){
- .sidenav { padding-top: 15px; } 
- .sidenav a { font-size: 18px; } 
- }
+a:hover {
+  color: rgb(151, 199, 206);
+  text-decoration: none;
+}
+img{
+  width: 10px;
+  height: 10px;
+}
 
-.dung { 
-  position:absolute; 
-  size: 30px; 
-  top:30%; 
-  left:10%; 
-  animation:ani 1s infinite alternate; 
-  text-shadow: 5px 5px 7px#383a3a; 
-} 
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #C8F2ED;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
 
-.dung1 { 
-  position:absolute; 
-  top:50%; 
-  left:25%; 
-  animation:ani 1.5s infinite alternate; 
-  text-shadow: 5px 5px 7px#383a3a; 
-} 
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #49ADA7;
+  display: block;
+  transition: 0.3s;
+}
 
-.dung2 { 
-  position:absolute; 
-  top:30%; 
-  left :40%; 
-  animation:ani 0.8s infinite alternate; 
-  text-shadow: 5px 5px 7px#383a3a; 
-} 
-.dung3 { 
-  position:absolute; 
-  top:50%; 
-  left :55%; 
-  animation:ani 1s infinite alternate; 
-  text-shadow: 5px 5px 7px#383a3a; 
-} 
-.dung4 { 
-  position:absolute; 
-  top:30%; 
-  left :80%; 
-  animation:ani 1.2s infinite alternate; 
-  text-shadow: 5px 5px 7px#383a3a; 
-} 
-@keyframes ani { 
- 0% { transform:translate(0,0); } 
- 100% { transform:translate(0,50px); } 
- }
+.sidenav a:hover {
+  color: #317a76;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+.dung {
+  position: absolute;
+  size: 30px;
+  top: 30%;
+  left: 10%;
+  animation: ani 1s infinite alternate;
+  text-shadow: 5px 5px 7px#383a3a;
+}
+
+.dung1 {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  animation: ani 1.5s infinite alternate;
+  text-shadow: 5px 5px 7px#383a3a;
+}
+
+.dung2 {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  animation: ani 0.8s infinite alternate;
+  text-shadow: 5px 5px 7px#383a3a;
+}
+
+.dung3 {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  animation: ani 1s infinite alternate;
+  text-shadow: 5px 5px 7px#383a3a;
+}
+
+.dung4 {
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  animation: ani 1.2s infinite alternate;
+  text-shadow: 5px 5px 7px#383a3a;
+}
+
+@keyframes ani {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, 50px);
+  }
+}
+
+#footer{
+  position: fixed;
+  background-color: #C8F2ED; /*임의색상*/
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5rem;
+  font-size: 30px;
+  color: #49ADA7;
+  margin:0 auto; 
+  text-align:center;
+}
+
+#contetns{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 6rem;
+}

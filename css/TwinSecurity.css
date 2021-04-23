@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
 * {
     color: #49ADA7;
     font-family: 'Poor Story', cursive;
     font-size: 30px;
 }
 
-button:hover{
-    box-shadow:200px 0 0 0 rgba(0,0,0,0.5) inset;
+button:hover {
+    box-shadow: 200px 0 0 0 rgba(0, 0, 0, 0.5) inset;
 }
-.inputs{
+
+.inputs {
     width: 400px;
     height: 50px;
     font-size: 30px;
@@ -16,22 +18,23 @@ button:hover{
     border-radius: 5px;
 }
 
-.customBtn{
+.customBtn {
     background-color: #49ADA7;
     color: azure;
-    border : none;
+    border: none;
     width: 200px;
     height: 50px;
     border-radius: 3px;
 }
 
-.customBtn:hover{
-    box-shadow:200px 0 0 0 rgba(0,0,0,0.5) inset;
+.customBtn:hover {
+    box-shadow: 200px 0 0 0 rgba(0, 0, 0, 0.5) inset;
 }
 
-textarea{
+textarea {
     width: 300px;
     font-size: 30px;
     border: 2px solid #49ADA7;
     border-radius: 5px;
 }
+
