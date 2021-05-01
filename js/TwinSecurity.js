@@ -2,9 +2,9 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
 	    var oddFlag = false; //글자수 출력
         var zCheck = "";
 
-        function Encrypt(callback, encryption) {
-            // var decryption;
-            // var encryption;
+        function Encrypt() {
+            var decryption;
+            var encryption;
             var blankCheck = "";
             var blankCheckCount = 0;
 
@@ -29,10 +29,7 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
             encryption = strEncryption($("#key").val(), $("#str").val());
 
             $("#txtar_encrypted_str").val(encryption);
-            return encryption
-        }
 
-        function decode(){
             for (var i = 0; i < encryption.length; i++) {
                 if (encryption.charAt(i) == ' ') // 공백제거
                     encryption = encryption.substring(0, i) + encryption.substring(i + 1, encryption.length);
@@ -45,12 +42,9 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                     decryption = decryption.substring(0, i) + " " + decryption.substring(i, decryption.length());
                 }
             }
+
             $("#txtar_decrypted_str").val(decryption);
         }
-        decode(Encrypt);
-
-        // function decode(){
-        // }
 
         function SetBoard(key) {
             var keyForSet = "";					// 중복된 문자가 제거된 문자열을 저장할 문자열.
@@ -84,8 +78,7 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
             //배열에 대입
             for (var i = 0; i < alphabetBoard.length; i++) {
                 for (var j = 0; j < alphabetBoard[i].length; j++) {
-                    //알파벳 사이의 처리
-                    str_encrypt_tbl += alphabetBoard[i][j] + " ";
+                    str_encrypt_tbl += alphabetBoard[i][j] + "-";
                 }
 
                 str_encrypt_tbl += "\n";
@@ -107,7 +100,7 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
 
                 if (i < str.length - 1) {
                     if (str.charAt(i) == str.charAt(i + 1)) { // 글이 반복되면 x추가
-                        tmpArr[1] = 'x'; 
+                        tmpArr[1] = 'x';
                         i--;
                     } else {
                         tmpArr[1] = str.charAt(i + 1);
@@ -190,6 +183,7 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                 tmpArr[1] = str.charAt(i + 1);
                 playFair.add(tmpArr);
             }
+
 
             for (var i = 0; i < playFair.size(); i++)
             {
