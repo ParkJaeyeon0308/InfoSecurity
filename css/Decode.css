@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+* {
+    color: #49ADA7;
+    font-family: 'Poor Story', cursive;
+    font-size: 30px;
+}
+
+.customBtn {
+    margin-top: 3%;
+    background-color: #49ADA7;
+    color: azure;
+    border: none;
+    width: 300px;
+    height: 70px;
+    border-radius: 3px;
+    cursor: pointer; 
+    transition:all 0.9s, color 0.3;
+}
+
+.customBtn:hover {
+    background-color: rgba(37, 119, 108);
+}
+
+
+textarea {
+    width: 300px;
+    font-size: 30px;
+    border: 2px solid #49ADA7;
+    border-radius: 5px;
+}

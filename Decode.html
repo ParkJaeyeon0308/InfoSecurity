@@ -1,0 +1,39 @@
+<html>
+<title>쌍자치환 암호하기</title>
+<meta charset="utf-8">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/InfoPage.js"></script>
+  <script src="js/TwinSecurity.js"></script>
+  <link rel="stylesheet" href="css/Decode.css" />
+  <link rel="stylesheet" href="css/InfoPage.css" />
+</head>
+
+<body>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="InfoPage.html">홈</a>
+    <!-- <a href="#">암호화란</a> -->
+    <a href="TwinSecurity.html">쌍자치환암호</a>
+    <a href="Decode.html">복호화</a>
+  </div>
+
+  <!-- <div class="container"> -->
+
+  <div class="nav" style="background-color: #C8F2ED; height: 100px;">
+    <!-- &#9776 이건 햄버거바 유니코드 show -->
+    <span style="font-size:30px;cursor:pointer; color: #49ADA7; margin-left: 20px; margin-top: 25px;"
+      onclick="openNav()">&#9776;</span>
+    <!-- </div> -->
+  </div>
+  <center>
+    <input type="button" id="btn_encrypt" value="암호화 시작" onclick="Encrypt();" class="customBtn" /><br><br>
+    복호화된 문자열<br>
+            <textarea id="txtar_decrypted_str" cols="20" rows="1"></textarea>
+          </center>
+            </body>
+            </html>
