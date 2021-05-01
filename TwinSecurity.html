@@ -14,31 +14,30 @@
 <body>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="index.html">홈</a>
+        <a href="InfoPage.html">홈</a>
         <!-- <a href="#">암호화란</a> -->
         <a href="TwinSecurity.html">쌍자치환암호</a>
-        <a href="Decode.html">복호화</a>
     </div>
 
     <!-- <div class="container"> -->
     <div class="nav" style="background-color: #C8F2ED; height: 100px;">
         <!-- &#9776 이건 햄버거바 유니코드 show -->
-        <span style="font-size:30px;cursor:pointer; color: #49ADA7; margin-left: 20px; margin-top: 25px;"
-            onclick="openNav()">&#9776;</span>
+        <span style="font-size:30px;cursor:pointer; color: #49ADA7; margin-left: 20px; margin-top: 25px;" onclick="openNav()">&#9776;</span>
         <!-- </div> -->
     </div>
     <center>
-        <form style="margin-top: 1%;">
+        <form style="margin-top: 5%;">
             가상의 암호키 <br> <input type="text" id="key" size="40" class="inputs"><br><br>
             평문<br> <input type="text" id="str" size="40" class="inputs">&nbsp;<br><br>
-            <input type="button" id="btn_encrypt" value="암호화 시작" onclick="Encrypt();" class="customBtn" /><br><br>
+            <input type="button" id="btn_encrypt" value="암호화 시작" onclick="Encrypt();" class="customBtn"/><br><br>
             <textarea id="txtar_encrypt_tbl" cols="20" rows="6"></textarea><br><br>
             암호화된 문자열<br>
-            <textarea id="txtar_encrypted_str" cols="20" rows="1"></textarea><br><br>
-            <input type="button" id="btn_decode" value="복호화 시작" onclick="decode();" class="customBtn" /><br><br>
+            <textarea id="txtar_encrypted_str" cols="20" rows="2"></textarea><br>
+            <br /><br />
             복호화된 문자열<br>
-            <textarea id="txtar_decrypted_str" cols="20" rows="1"></textarea>
+            <textarea id="txtar_decrypted_str" cols="20" rows="2"></textarea>
         </form>
     </center>
+</body>
 
 </html>
