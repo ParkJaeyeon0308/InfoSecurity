@@ -74,74 +74,100 @@ img{
   }
 }
 
-.dung {
+.container {
   position: absolute;
-  size: 30px;
+  height: 400px;
+  width: 800px;
   top: 30%;
-  left: 10%;
-  animation: ani 1s infinite alternate;
-  text-shadow: 5px 5px 7px#383a3a;
+  left: calc(50% - 420px);
+  display: flex;
 }
 
-.dung1 {
+.card {
+  display: flex;
+  height: 280px;
+  width: 500px;
+  background-color: #C8F2ED;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #82aca7;
+/*   margin-left: -50px; */
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
+}
+
+.card:not(:first-child) {
+    margin-left: -50px;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.title {
+  color: #365f5a;
+  font-weight: 300;
   position: absolute;
-  top: 50%;
-  left: 25%;
-  animation: ani 1.5s infinite alternate;
-  text-shadow: 5px 5px 7px#383a3a;
+  left: 20px;
+  top: 15px;
 }
 
-.dung2 {
+.bar {
   position: absolute;
-  top: 30%;
-  left: 40%;
-  animation: ani 0.8s infinite alternate;
-  text-shadow: 5px 5px 7px#383a3a;
+  top: 100px;
+  left: 20px;
+  height: 5px;
+  width: 150px;
 }
 
-.dung3 {
+.emptybar {
+  background-color: #52948c;
+  width: 100%;
+  height: 100%;
+}
+
+.filledbar {
   position: absolute;
-  top: 50%;
-  left: 55%;
-  animation: ani 1s infinite alternate;
-  text-shadow: 5px 5px 7px#383a3a;
+  top: 0px;
+  z-index: 3;
+  width: 0px;
+  height: 100%;
+  background: rgb(0,154,217);
+  background: linear-gradient(90deg, #52948c 0%, #9ec7c2 65%, #c3dbd8 100%);
+  transition: 0.6s ease-out;
 }
 
-.dung4 {
+.card:hover .filledbar {
+  width: 120px;
+  transition: 0.4s ease-out;
+}
+
+.circle {
   position: absolute;
-  top: 30%;
-  left: 80%;
-  animation: ani 1.2s infinite alternate;
-  text-shadow: 5px 5px 7px#383a3a;
+  top: 150px;
+  left: calc(50% - 60px);
 }
 
-@keyframes ani {
-  0% {
-    transform: translate(0, 0);
-  }
-
-  100% {
-    transform: translate(0, 50px);
-  }
+.stroke {
+  stroke: #08ffe2;
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  transition: 0.6s ease-out;
 }
 
-#footer{
-  position: fixed;
-  background-color: #C8F2ED; /*임의색상*/
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 5rem;
-  font-size: 30px;
-  color: #49ADA7;
-  margin:0 auto; 
-  text-align:center;
+svg {
+  fill: #52948c;
+  stroke-width: 2px;
 }
 
-#contetns{
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 6rem;
+.card:hover .stroke {
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
 }
