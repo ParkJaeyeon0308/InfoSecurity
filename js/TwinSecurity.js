@@ -53,41 +53,79 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
             var duplicationFlag = false;		// 문자 중복을 체크하기 위한 flag 변수.
             var keyLengthCount = 0;					// alphabetBoard에 keyForSet을 넣기 위한 count변수.
             
-            key += "abcdefghijklmnopqrstuvwxyz"; 	// 키에 모든 알파벳을 추가.
-            
-            // 중복처리
-            for (var i = 0; i < key.length; i++) {
-                for (var j = 0; j < keyForSet.length; j++ ) {
-                    if (key.charAt(i) == keyForSet.charAt(j)) {
-                        duplicationFlag = true;
-                        break;
+            if(key == key.toUpperCase()){ //대문자면 대문자로 처리
+                key+="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+                for (var i = 0; i < key.length; i++) {
+                    for (var j = 0; j < keyForSet.length; j++ ) {
+                        if (key.charAt(i) == keyForSet.charAt(j)) {
+                            duplicationFlag = true;
+                            break;
+                        }
+                    }
+    
+                    if (!(duplicationFlag)) keyForSet += key.charAt(i);
+    
+                    duplicationFlag = false;
+                }
+    
+                for (var i = 0; i < alphabetBoard.length; i++ ) {
+                    for (var j = 0; j < alphabetBoard[i].length; j++ ) {
+                        alphabetBoard[i][j] = keyForSet.charAt(keyLengthCount++);
                     }
                 }
-
-                if (!(duplicationFlag)) keyForSet += key.charAt(i);
-
-                duplicationFlag = false;
-            }
-
-            for (var i = 0; i < alphabetBoard.length; i++ ) {
-                for (var j = 0; j < alphabetBoard[i].length; j++ ) {
-                    alphabetBoard[i][j] = keyForSet.charAt(keyLengthCount++);
+    
+                var str_encrypt_tbl = "";
+    
+                //배열에 대입
+                for (var i = 0; i < alphabetBoard.length; i++) {
+                    for (var j = 0; j < alphabetBoard[i].length; j++) {
+                        str_encrypt_tbl += alphabetBoard[i][j] + " ";
+                    }
+    
+                    str_encrypt_tbl += "\n";
+                }	
+    
+                $("#txtar_encrypt_tbl").val(str_encrypt_tbl);
+            }else{ //아니면 소문자로 처리
+                key += "abcdefghijklmnopqrstuvwxyz";
+                for (var i = 0; i < key.length; i++) {
+                    for (var j = 0; j < keyForSet.length; j++ ) {
+                        if (key.charAt(i) == keyForSet.charAt(j)) {
+                            duplicationFlag = true;
+                            break;
+                        }
+                    }
+    
+                    if (!(duplicationFlag)) keyForSet += key.charAt(i);
+    
+                    duplicationFlag = false;
                 }
-            }
-
-            var str_encrypt_tbl = "";
-
-            //배열에 대입
-            for (var i = 0; i < alphabetBoard.length; i++) {
-                for (var j = 0; j < alphabetBoard[i].length; j++) {
-                    str_encrypt_tbl += alphabetBoard[i][j] + "-";
+    
+                for (var i = 0; i < alphabetBoard.length; i++ ) {
+                    for (var j = 0; j < alphabetBoard[i].length; j++ ) {
+                        alphabetBoard[i][j] = keyForSet.charAt(keyLengthCount++);
+                    }
                 }
-
-                str_encrypt_tbl += "\n";
-            }	
-
-            $("#txtar_encrypt_tbl").val(str_encrypt_tbl);
-        }
+    
+                var str_encrypt_tbl = "";
+    
+                //배열에 대입
+                for (var i = 0; i < alphabetBoard.length; i++) {
+                    for (var j = 0; j < alphabetBoard[i].length; j++) {
+                        str_encrypt_tbl += alphabetBoard[i][j] + " ";
+                    }
+    
+                    str_encrypt_tbl += "\n";
+                }	
+    
+                $("#txtar_encrypt_tbl").val(str_encrypt_tbl);
+            }
+            }
+             	// 키에 모든 알파벳을 추가.
+            
+            // 중복처리
+            
 
         function strEncryption(key, str) {
             var playFair = new ArrayList();
