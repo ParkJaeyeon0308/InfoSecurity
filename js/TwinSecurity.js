@@ -14,6 +14,8 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                 if (str.charAt(i) == ' ') { // 공백제거
                     str = str.substring(0, i) + str.substring(i + 1, str.length());
                     blankCheck += 10;
+                    str = str.replace(" ","");
+                    //상시 공백제거
                 } else {
                     blankCheck += 0;
                 }
@@ -92,6 +94,8 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
             var encPlayFair = new ArrayList();
             var x1 = 0, x2 = 0, y1 = 0, y2 = 0;
             var encStr = "";
+            str = str.replace(" ","");
+            //상시 공백제거
 
             for (var i = 0; i < str.length; i += 2 ) // arraylist 세팅
             {
@@ -173,6 +177,8 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
             var decPlayFair = new ArrayList(); // 바꾼 후의 쌍자암호 저장할 곳
             var x1 = 0, x2 = 0, y1 = 0, y2 = 0; //쌍자 암호 두 글자의 각각의 행,열 값
             var decStr = "";
+            str = str.replace(" ","");
+            //상시 공백제거
 
             var lengthOddFlag = 1;
 
