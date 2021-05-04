@@ -14,8 +14,6 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                 if (str.charAt(i) == ' ') { // 공백제거
                     str = str.substring(0, i) + str.substring(i + 1, str.length());
                     blankCheck += 10;
-                    str = str.replace(" ","");
-                    //상시 공백제거
                 } else {
                     blankCheck += 0;
                 }
@@ -53,6 +51,8 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
             var duplicationFlag = false;		// 문자 중복을 체크하기 위한 flag 변수.
             var keyLengthCount = 0;					// alphabetBoard에 keyForSet을 넣기 위한 count변수.
             
+            
+
             if(key == key.toUpperCase()){ //대문자면 대문자로 처리
                 key+="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -128,12 +128,11 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
             
 
         function strEncryption(key, str) {
+            str = str.replace(/ /g,"");//상시 공백제거
             var playFair = new ArrayList();
             var encPlayFair = new ArrayList();
             var x1 = 0, x2 = 0, y1 = 0, y2 = 0;
             var encStr = "";
-            str = str.replace(" ","");
-            //상시 공백제거
 
             for (var i = 0; i < str.length; i += 2 ) // arraylist 세팅
             {
@@ -171,12 +170,15 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                 {
                     for (var k = 0; k < alphabetBoard[j].length; k++)
                     {
+                        console.log("andogh!"+alphabetBoard[j][k])
                         if (alphabetBoard[j][k] == playFair.get(i)[0]) {
+                            // console.log("호!"+alphabetBoard[j][k])
                             x1 = j;
                             y1 = k;
                         }
 
                         if (alphabetBoard[j][k] == playFair.get(i)[1]) {
+                            console.log("읭!"+alphabetBoard[j][k])
                             x2 = j;
                             y2 = k;
                         }
@@ -211,12 +213,11 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
         }
 
         function strDecryption(key, str, zCheck) {
+            str = str.replace(/ /g,"");//상시 공백제거
             var playFair = new ArrayList(); // 바꾸기 전 쌍자암호를 저장할 곳
             var decPlayFair = new ArrayList(); // 바꾼 후의 쌍자암호 저장할 곳
             var x1 = 0, x2 = 0, y1 = 0, y2 = 0; //쌍자 암호 두 글자의 각각의 행,열 값
             var decStr = "";
-            str = str.replace(" ","");
-            //상시 공백제거
 
             var lengthOddFlag = 1;
 
@@ -297,19 +298,16 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
         }
 
         ArrayList = function (/* array? */arr) {
-            // summary
             // Returns a new object of type dojox.collections.ArrayList
             var items = [];
             if (arr) items = items.concat(arr);
             this.count = items.length;
             this.add = function (/* object */obj) {
-                // summary
                 // Add an element to the collection.
                 items.push(obj);
                 this.count = items.length;
             };
             this.addRange = function (/* array */a) {
-                // summary
                 // Add a range of objects to the ArrayList
                 if (a.getIterator) {
                     var e = a.getIterator();
@@ -325,18 +323,15 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                 }
             };
             this.clear = function () {
-                // summary
                 // Clear all elements out of the collection, and reset the count.
                 items.splice(0, items.length);
                 this.count = 0;
             };
             this.clone = function () {
-                // summary
                 // Clone the array list
                 return new dojox.collections.ArrayList(items); // dojox.collections.ArrayList
             };
             this.contains = function (/* object */obj) {
-                // summary
                 // Check to see if the passed object is a member in the ArrayList
                 for (var i = 0; i < items.length; i++) {
                     if (items[i] == obj) {
@@ -346,7 +341,6 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                 return false; // bool
             };
             this.forEach = function (/* function */ fn, /* object? */ scope) {
-                // summary
                 // functional iterator, following the mozilla spec.
                 dojo.forEach(items, fn, scope);
             };
@@ -357,12 +351,10 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                 return items.length;
             };
             this.getIterator = function () {
-                // summary
                 // Get an Iterator for this object
                 return new dojox.collections.Iterator(items); // dojox.collections.Iterator
             };
             this.indexOf = function (/* object */obj) {
-                // summary
                 // Return the numeric index of the passed object; will return -1 if not found.
                 for (var i = 0; i < items.length; i++) {
                     if (items[i] == obj) {
@@ -372,18 +364,15 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                 return -1; // int
             };
             this.insert = function (/* int */ i, /* object */ obj) {
-                // summary
                 // Insert the passed object at index i
                 items.splice(i, 0, obj);
                 this.count = items.length;
             };
             this.item = function (/* int */ i) {
-                // summary
                 // return the element at index i
                 return items[i]; // object
             };
             this.remove = function (/* object */obj) {
-                // summary
                 // Look for the passed object, and if found, remove it from the internal array.
                 var i = this.indexOf(obj);
                 if (i >= 0) {
@@ -392,18 +381,15 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                 this.count = items.length;
             };
             this.removeAt = function (/* int */ i) {
-                // summary
                 // return an array with function applied to all elements
                 items.splice(i, 1);
                 this.count = items.length;
             };
             this.reverse = function () {
-                // summary
                 // Reverse the internal array
                 items.reverse();
             };
             this.sort = function (/* function? */ fn) {
-                // summary
                 // sort the internal array
                 if (fn) {
                     items.sort(fn);
@@ -412,18 +398,15 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                 }
             };
             this.setByIndex = function (/* int */ i, /* object */ obj) {
-                // summary
                 // Set an element in the array by the passed index.
                 items[i] = obj;
                 this.count = items.length;
             };
             this.toArray = function () {
-                // summary
                 // Return a new array with all of the items of the internal array concatenated.
                 return [].concat(items);
             }
             this.toString = function (/* string */ delim) {
-                // summary
                 // implementation of toString, follows [].toString();
                 return items.join((delim || ","));
             };
