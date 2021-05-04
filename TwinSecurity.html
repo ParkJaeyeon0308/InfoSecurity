@@ -15,7 +15,7 @@
 <body>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="InfoPage.html">홈</a>
+        <a href="index.html">홈</a>
         <!-- <a href="#">암호화란</a> -->
         <a href="TwinSecurity.html">쌍자치환암호</a>
     </div>
@@ -32,9 +32,10 @@
             평문<br> <input type="text" id="str" size="40" class="inputs">&nbsp;<br><br>
             <input type="button" id="btn_encrypt" value="암호화 시작" onclick="Encrypt();" class="customBtn"/><br><br>
             <textarea id="txtar_encrypt_tbl" cols="20" rows="6"></textarea><br><br>
+            평문 정렬<br><textarea id="txtar_encrypt_tgt" cols="20" rows="1"></textarea><br><br>
             암호화된 문자열<br>
             <textarea id="txtar_encrypted_str" cols="20" rows="2"></textarea><br>
-            <br /><br />
+            <br />
             복호화된 문자열<br>
             <textarea id="txtar_decrypted_str" cols="20" rows="2"></textarea>
         </form>

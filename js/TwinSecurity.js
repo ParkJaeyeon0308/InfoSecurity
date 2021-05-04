@@ -3,11 +3,15 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
         var zCheck = "";
 
         function Encrypt() {
+            //복호화 들어갈 변수
             var decryption;
+            //암호화 들어갈 변수
             var encryption;
+            //빈칸 체크
             var blankCheck = "";
             var blankCheckCount = 0;
 
+            //html에 전송
             SetBoard($("#key").val());
 
             for (var i = 0; i < str.length; i++ ) {
@@ -157,6 +161,8 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
             var str_encrypt_tgt = "";
 
             for (var i = 0; i < playFair.size(); i++) {
+                //쌍자로 묶음
+                console.log(playFair.get(i)[0] + "" + playFair.get(i)[1]);
                 str_encrypt_tgt += playFair.get(i)[0] + "" + playFair.get(i)[1] + " ";
             }
 
@@ -170,15 +176,14 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                 {
                     for (var k = 0; k < alphabetBoard[j].length; k++)
                     {
-                        console.log("andogh!"+alphabetBoard[j][k])
                         if (alphabetBoard[j][k] == playFair.get(i)[0]) {
-                            // console.log("호!"+alphabetBoard[j][k])
+                            //하나하나 체크하기
                             x1 = j;
                             y1 = k;
                         }
 
                         if (alphabetBoard[j][k] == playFair.get(i)[1]) {
-                            console.log("읭!"+alphabetBoard[j][k])
+                            //하나하나 체크하기
                             x2 = j;
                             y2 = k;
                         }
@@ -206,6 +211,7 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
 
             for (var i = 0; i < encPlayFair.size() ; i++)
             {
+                //쌍자로 묶어 평문 암호화시킴
                 encStr += encPlayFair.get(i)[0] + "" + encPlayFair.get(i)[1] + " ";
             }
 
@@ -223,7 +229,7 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
 
 
             for (var i = 0; i < str.length; i += 2 ) {
-                var tmpArr = new Array(2);
+                var tmpArr = new Array(2); //2차원 배열 생성
                 tmpArr[0] = str.charAt(i);
                 tmpArr[1] = str.charAt(i + 1);
                 playFair.add(tmpArr);
@@ -232,13 +238,14 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
 
             for (var i = 0; i < playFair.size(); i++)
             {
-                var tmpArr = new Array(2);
+                var tmpArr = new Array(2);//새로 만들기
 
                 for (var j = 0; j < alphabetBoard.length; j++ )
                 {
                     for (var k = 0; k < alphabetBoard[j].length; k++ )
                     {
                         if (alphabetBoard[j][k] == playFair.get(i)[0]) {
+                            //체크
                             x1 = j;
                             y1 = k;
                         }
@@ -297,18 +304,17 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
             return decStr;
         }
 
-        ArrayList = function (/* array? */arr) {
-            // Returns a new object of type dojox.collections.ArrayList
+        ArrayList = function (arr) { //this 처리 해주기
             var items = [];
             if (arr) items = items.concat(arr);
             this.count = items.length;
-            this.add = function (/* object */obj) {
-                // Add an element to the collection.
+            this.add = function (obj) {
+                //add object 하기
                 items.push(obj);
                 this.count = items.length;
             };
-            this.addRange = function (/* array */a) {
-                // Add a range of objects to the ArrayList
+            this.addRange = function (a) {
+                //range Arraylist 처리
                 if (a.getIterator) {
                     var e = a.getIterator();
                     while (!e.atEnd()) {
@@ -323,25 +329,23 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                 }
             };
             this.clear = function () {
-                // Clear all elements out of the collection, and reset the count.
+                //나눠주기
                 items.splice(0, items.length);
                 this.count = 0;
             };
             this.clone = function () {
-                // Clone the array list
-                return new dojox.collections.ArrayList(items); // dojox.collections.ArrayList
+                // 넣어주기
+                return new dojox.collections.ArrayList(items); 
             };
-            this.contains = function (/* object */obj) {
-                // Check to see if the passed object is a member in the ArrayList
+            this.contains = function (obj) {
                 for (var i = 0; i < items.length; i++) {
                     if (items[i] == obj) {
-                        return true; // bool
+                        return true; // boolean
                     }
                 }
-                return false; // bool
+                return false; // boolean
             };
-            this.forEach = function (/* function */ fn, /* object? */ scope) {
-                // functional iterator, following the mozilla spec.
+            this.forEach = function ( fn,  scope) {
                 dojo.forEach(items, fn, scope);
             };
             this.get = function (index) {
@@ -351,11 +355,9 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                 return items.length;
             };
             this.getIterator = function () {
-                // Get an Iterator for this object
-                return new dojox.collections.Iterator(items); // dojox.collections.Iterator
+                return new dojox.collections.Iterator(items);
             };
             this.indexOf = function (/* object */obj) {
-                // Return the numeric index of the passed object; will return -1 if not found.
                 for (var i = 0; i < items.length; i++) {
                     if (items[i] == obj) {
                         return i; // int
@@ -363,51 +365,44 @@ var alphabetBoard = [['', '', '', '', ''], ['', '', '', '', ''], ['', '', '', ''
                 }
                 return -1; // int
             };
-            this.insert = function (/* int */ i, /* object */ obj) {
-                // Insert the passed object at index i
+            this.insert = function (i, obj) {
+                // insert
                 items.splice(i, 0, obj);
                 this.count = items.length;
             };
-            this.item = function (/* int */ i) {
-                // return the element at index i
+            this.item = function (i) {
                 return items[i]; // object
             };
-            this.remove = function (/* object */obj) {
-                // Look for the passed object, and if found, remove it from the internal array.
+            this.remove = function (obj) {
                 var i = this.indexOf(obj);
                 if (i >= 0) {
                     items.splice(i, 1);
                 }
                 this.count = items.length;
             };
-            this.removeAt = function (/* int */ i) {
-                // return an array with function applied to all elements
+            this.removeAt = function (i) {
                 items.splice(i, 1);
                 this.count = items.length;
             };
             this.reverse = function () {
-                // Reverse the internal array
                 items.reverse();
             };
-            this.sort = function (/* function? */ fn) {
-                // sort the internal array
+            this.sort = function (fn) {
+                //item들 sort처리
                 if (fn) {
                     items.sort(fn);
                 } else {
                     items.sort();
                 }
             };
-            this.setByIndex = function (/* int */ i, /* object */ obj) {
-                // Set an element in the array by the passed index.
+            this.setByIndex = function ( i,  obj) {
                 items[i] = obj;
                 this.count = items.length;
             };
             this.toArray = function () {
-                // Return a new array with all of the items of the internal array concatenated.
                 return [].concat(items);
             }
-            this.toString = function (/* string */ delim) {
-                // implementation of toString, follows [].toString();
+            this.toString = function ( delim) {
                 return items.join((delim || ","));
             };
         };
